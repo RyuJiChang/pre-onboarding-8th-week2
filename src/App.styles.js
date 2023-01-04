@@ -5,16 +5,14 @@ const MainContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  /* background-color: #e9ecef87; */
 `;
 
 const Header = styled.header`
   width: 50vw;
   font-size: 50px;
-  margin-bottom: 2em;
+  margin: 1em 0;
   display: flex;
   justify-content: center;
-  background-color: gray;
 `;
 
 const BoxContainerWrapper = styled.div`
@@ -23,15 +21,68 @@ const BoxContainerWrapper = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: gray;
   border-radius: 0.5em;
 `;
 
 const BoxContainer = styled.div`
   width: 25vw;
   height: 70vh;
-  background-color: green;
+  border-radius: 1em;
+  overflow-y: auto;
+  border: 1px solid gray;
+`;
+
+const ContainerHeader = styled.div`
+  width: 24vw;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  background-color: white;
   border-radius: 1em;
 `;
 
-export { MainContainer, Header, BoxContainerWrapper, BoxContainer };
+const ContainerTitle = styled.span`
+  font-size: 2rem;
+  margin: 0.5em;
+`;
+
+const ContainerListNumber = styled.div`
+  font-size: 1.5rem;
+  width: 1.2em;
+  height: 1.2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #afb8c133;
+  border-radius: 1em;
+`;
+
+const ListContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-top: 5em;
+`;
+
+const List = styled.div`
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  margin: 0.5em;
+  border: 1px solid black;
+  border-radius: 1em;
+  .logo {
+    margin: 0.7em;
+  }
+`;
+
+export {
+  MainContainer,
+  Header,
+  BoxContainerWrapper,
+  BoxContainer,
+  ContainerHeader,
+  ContainerTitle,
+  ContainerListNumber,
+  ListContainer,
+  List,
+};

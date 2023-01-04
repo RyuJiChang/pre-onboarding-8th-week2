@@ -1,13 +1,122 @@
-import { MainContainer, Header, BoxContainerWrapper, BoxContainer } from './App.styles';
+import { FaRegPauseCircle, FaRegPlayCircle, FaRegCheckCircle } from 'react-icons/fa';
+
+import {
+  MainContainer,
+  Header,
+  BoxContainerWrapper,
+  BoxContainer,
+  ContainerHeader,
+  ContainerTitle,
+  ContainerListNumber,
+  ListContainer,
+  List,
+} from './App.styles';
 
 function App() {
   return (
     <MainContainer>
-      <Header>112312323</Header>
+      <Header>Issue Tracking Service</Header>
       <BoxContainerWrapper>
-        <BoxContainer></BoxContainer>
-        <BoxContainer></BoxContainer>
-        <BoxContainer></BoxContainer>
+        <BoxContainer>
+          <ContainerHeader>
+            <ContainerTitle>Todo</ContainerTitle>
+            <ContainerListNumber>1</ContainerListNumber>
+          </ContainerHeader>
+          <ListContainer>
+            <List>
+              <FaRegPauseCircle className="logo" />
+              123
+            </List>{' '}
+            <List>
+              <FaRegPauseCircle className="logo" />
+              123
+            </List>{' '}
+            <List>
+              <FaRegPauseCircle className="logo" />
+              123
+            </List>{' '}
+            <List>
+              <FaRegPauseCircle className="logo" />
+              123
+            </List>{' '}
+            <List>
+              <FaRegPauseCircle className="logo" />
+              123
+            </List>{' '}
+            <List>
+              <FaRegPauseCircle className="logo" />
+              123
+            </List>{' '}
+            <List>
+              <FaRegPauseCircle className="logo" />
+              123
+            </List>{' '}
+            <List>
+              <FaRegPauseCircle className="logo" />
+              123
+            </List>{' '}
+            <List>
+              <FaRegPauseCircle className="logo" />
+              123
+            </List>{' '}
+            <List>
+              <FaRegPauseCircle className="logo" />
+              123
+            </List>{' '}
+            <List>
+              <FaRegPauseCircle className="logo" />
+              123
+            </List>{' '}
+            <List>
+              <FaRegPauseCircle className="logo" />
+              123
+            </List>{' '}
+            <List>
+              <FaRegPauseCircle className="logo" />
+              123
+            </List>
+          </ListContainer>
+        </BoxContainer>
+        <BoxContainer>
+          <ContainerHeader>
+            <ContainerTitle>In Progress</ContainerTitle>
+            <ContainerListNumber>3</ContainerListNumber>
+          </ContainerHeader>
+          <ListContainer>
+            <List>
+              <FaRegPlayCircle className="logo" /> 123
+            </List>
+            <List>
+              <FaRegPlayCircle className="logo" /> 123
+            </List>
+            <List>
+              <FaRegPlayCircle className="logo" /> 123
+            </List>
+            <List>
+              <FaRegPlayCircle className="logo" /> 123
+            </List>
+          </ListContainer>
+        </BoxContainer>
+        <BoxContainer>
+          <ContainerHeader>
+            <ContainerTitle>Done</ContainerTitle>
+            <ContainerListNumber>5</ContainerListNumber>
+          </ContainerHeader>
+          <ListContainer>
+            <List>
+              <FaRegCheckCircle className="logo" /> 123
+            </List>
+            <List>
+              <FaRegCheckCircle className="logo" /> 123
+            </List>
+            <List>
+              <FaRegCheckCircle className="logo" /> 123
+            </List>
+            <List>
+              <FaRegCheckCircle className="logo" /> 123
+            </List>
+          </ListContainer>
+        </BoxContainer>
       </BoxContainerWrapper>
     </MainContainer>
   );
