@@ -33,7 +33,7 @@ const BoxContainer = styled.div`
 `;
 
 const ContainerHeader = styled.div`
-  width: 24vw;
+  width: 23vw;
   display: flex;
   align-items: center;
   position: fixed;
@@ -42,7 +42,7 @@ const ContainerHeader = styled.div`
 `;
 
 const ContainerTitle = styled.span`
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin: 0.5em;
 `;
 

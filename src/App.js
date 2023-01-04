@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { FaRegPauseCircle, FaRegPlayCircle, FaRegCheckCircle } from 'react-icons/fa';
 
 import {
@@ -11,8 +12,10 @@ import {
   ListContainer,
   List,
 } from './App.styles';
+import { Modal } from './components';
 
 function App() {
+  const [modalOpen, setModalOpen] = useState(false);
   let data = {
     todoArr: [
       {
@@ -168,6 +171,15 @@ function App() {
       },
     ],
   };
+
+  const modalHandler = e => {
+    setModalOpen(true);
+  };
+
+  const onClose = () => {
+    setModalOpen(false);
+  };
+
   return (
     <MainContainer>
       <Header>Issue Tracking Service</Header>
@@ -180,9 +192,10 @@ function App() {
           <ListContainer>
             {data.todoArr.map(el => {
               return (
-                <List key={el.id}>
+                <List key={el.id} onClick={modalHandler}>
                   <FaRegPauseCircle className="logo" />
                   {el.title}
+                  <Modal isOpen={modalOpen} onClose={onClose} listData={el} />
                 </List>
               );
             })}
@@ -196,9 +209,10 @@ function App() {
           <ListContainer>
             {data.inProgressArr.map(el => {
               return (
-                <List key={el.id}>
+                <List key={el.id} onClick={modalHandler}>
                   <FaRegPlayCircle className="logo" />
                   {el.title}
+                  <Modal isOpen={modalOpen} onClose={onClose} listData={el} />
                 </List>
               );
             })}
@@ -212,9 +226,10 @@ function App() {
           <ListContainer>
             {data.doneArr.map(el => {
               return (
-                <List key={el.id}>
+                <List key={el.id} onClick={modalHandler}>
                   <FaRegCheckCircle className="logo" />
                   {el.title}
+                  <Modal isOpen={modalOpen} onClose={onClose} listData={el} />
                 </List>
               );
             })}
