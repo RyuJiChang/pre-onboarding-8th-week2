@@ -23,122 +23,89 @@ function App() {
         title: '제목입니다.',
         contents: '할일 내용에 맞게 뭔가 좀 긴 내용이 들어가게 작성',
         expiryDate: '2023-01-03T13:18',
-        listState: 'done',
+        listState: 'todo',
         manager: '류지창(이미지도 있으면 좋고)',
       },
       {
-        id: 1,
-        title: '제목입니다.',
+        id: 2,
+        title: '2제목입니다.',
         contents: '할일 내용에 맞게 뭔가 좀 긴 내용이 들어가게 작성',
         expiryDate: '2023-01-03T13:18',
-        listState: 'done',
-        manager: '류지창(이미지도 있으면 좋고)',
-      },
-      {
-        id: 1,
-        title: '제목입니다.',
-        contents: '할일 내용에 맞게 뭔가 좀 긴 내용이 들어가게 작성',
-        expiryDate: '2023-01-03T13:18',
-        listState: 'done',
+        listState: 'todo',
         manager: '류지창(이미지도 있으면 좋고)',
       },
     ],
     inProgressArr: [
       {
-        id: 1,
-        title: '제목입니다.',
+        id: 3,
+        title: '3제목입니다.',
         contents: '할일 내용에 맞게 뭔가 좀 긴 내용이 들어가게 작성',
         expiryDate: '2023-01-03T13:18',
-        listState: 'done',
+        listState: 'inProgress',
         manager: '류지창(이미지도 있으면 좋고)',
       },
       {
-        id: 1,
-        title: '제목입니다.',
+        id: 4,
+        title: '4제목입니다.',
         contents: '할일 내용에 맞게 뭔가 좀 긴 내용이 들어가게 작성',
         expiryDate: '2023-01-03T13:18',
-        listState: 'done',
+        listState: 'inProgress',
         manager: '류지창(이미지도 있으면 좋고)',
       },
       {
-        id: 1,
-        title: '제목입니다.',
+        id: 5,
+        title: '5제목입니다.',
         contents: '할일 내용에 맞게 뭔가 좀 긴 내용이 들어가게 작성',
         expiryDate: '2023-01-03T13:18',
-        listState: 'done',
+        listState: 'inProgress',
         manager: '류지창(이미지도 있으면 좋고)',
       },
 
       {
-        id: 1,
-        title: '제목입니다.',
+        id: 6,
+        title: '6제목입니다.',
         contents: '할일 내용에 맞게 뭔가 좀 긴 내용이 들어가게 작성',
         expiryDate: '2023-01-03T13:18',
-        listState: 'done',
+        listState: 'inProgress',
         manager: '류지창(이미지도 있으면 좋고)',
       },
       {
-        id: 1,
-        title: '제목입니다.',
+        id: 7,
+        title: '7제목입니다.',
         contents: '할일 내용에 맞게 뭔가 좀 긴 내용이 들어가게 작성',
         expiryDate: '2023-01-03T13:18',
-        listState: 'done',
+        listState: 'inProgress',
         manager: '류지창(이미지도 있으면 좋고)',
       },
       {
-        id: 1,
-        title: '제목입니다.',
+        id: 8,
+        title: '8제목입니다.',
         contents: '할일 내용에 맞게 뭔가 좀 긴 내용이 들어가게 작성',
         expiryDate: '2023-01-03T13:18',
-        listState: 'done',
+        listState: 'inProgress',
         manager: '류지창(이미지도 있으면 좋고)',
       },
     ],
     doneArr: [
       {
-        id: 1,
-        title: '제목입니다.',
+        id: 9,
+        title: '9제목입니다.',
         contents: '할일 내용에 맞게 뭔가 좀 긴 내용이 들어가게 작성',
         expiryDate: '2023-01-03T13:18',
         listState: 'done',
         manager: '류지창(이미지도 있으면 좋고)',
       },
       {
-        id: 1,
-        title: '제목입니다.',
+        id: 10,
+        title: '10제목입니다.',
         contents: '할일 내용에 맞게 뭔가 좀 긴 내용이 들어가게 작성',
         expiryDate: '2023-01-03T13:18',
         listState: 'done',
         manager: '류지창(이미지도 있으면 좋고)',
       },
       {
-        id: 1,
-        title: '제목입니다.',
-        contents: '할일 내용에 맞게 뭔가 좀 긴 내용이 들어가게 작성',
-        expiryDate: '2023-01-03T13:18',
-        listState: 'done',
-        manager: '류지창(이미지도 있으면 좋고)',
-      },
-
-      {
-        id: 1,
-        title: '제목입니다.',
-        contents: '할일 내용에 맞게 뭔가 좀 긴 내용이 들어가게 작성',
-        expiryDate: '2023-01-03T13:18',
-        listState: 'done',
-        manager: '류지창(이미지도 있으면 좋고)',
-      },
-      {
-        id: 1,
-        title: '제목입니다.',
-        contents: '할일 내용에 맞게 뭔가 좀 긴 내용이 들어가게 작성',
-        expiryDate: '2023-01-03T13:18',
-        listState: 'done',
-        manager: '류지창(이미지도 있으면 좋고)',
-      },
-      {
-        id: 1,
-        title: '제목입니다.',
+        id: 11,
+        title: '11제목입니다.',
         contents: '할일 내용에 맞게 뭔가 좀 긴 내용이 들어가게 작성',
         expiryDate: '2023-01-03T13:18',
         listState: 'done',
@@ -146,35 +113,69 @@ function App() {
       },
 
       {
-        id: 1,
-        title: '제목입니다.',
+        id: 12,
+        title: '12제목입니다.',
         contents: '할일 내용에 맞게 뭔가 좀 긴 내용이 들어가게 작성',
         expiryDate: '2023-01-03T13:18',
         listState: 'done',
         manager: '류지창(이미지도 있으면 좋고)',
       },
       {
-        id: 1,
-        title: '제목입니다.',
+        id: 13,
+        title: '13제목입니다.',
         contents: '할일 내용에 맞게 뭔가 좀 긴 내용이 들어가게 작성',
         expiryDate: '2023-01-03T13:18',
         listState: 'done',
         manager: '류지창(이미지도 있으면 좋고)',
       },
       {
-        id: 1,
-        title: '제목입니다.',
+        id: 14,
+        title: '14제목입니다.',
+        contents: '할일 내용에 맞게 뭔가 좀 긴 내용이 들어가게 작성',
+        expiryDate: '2023-01-03T13:18',
+        listState: 'done',
+        manager: '류지창(이미지도 있으면 좋고)',
+      },
+
+      {
+        id: 15,
+        title: '15제목입니다.',
+        contents: '할일 내용에 맞게 뭔가 좀 긴 내용이 들어가게 작성',
+        expiryDate: '2023-01-03T13:18',
+        listState: 'done',
+        manager: '류지창(이미지도 있으면 좋고)',
+      },
+      {
+        id: 16,
+        title: '16제목입니다.',
+        contents: '할일 내용에 맞게 뭔가 좀 긴 내용이 들어가게 작성',
+        expiryDate: '2023-01-03T13:18',
+        listState: 'done',
+        manager: '류지창(이미지도 있으면 좋고)',
+      },
+      {
+        id: 17,
+        title: '17제목입니다.',
         contents: '할일 내용에 맞게 뭔가 좀 긴 내용이 들어가게 작성',
         expiryDate: '2023-01-03T13:18',
         listState: 'done',
         manager: '류지창(이미지도 있으면 좋고)',
       },
     ],
+    idNow: 18,
   };
   const [modalOpen, setModalOpen] = useState(false);
   const [isMakeIssue, setIsMakeIssue] = useState(false);
   const [data, setData] = useState(dummydata);
-
+  const [listData, setListData] = useState({
+    id: 1,
+    title: '제목입니다.',
+    contents: '할일 내용에 맞게 뭔가 좀 긴 내용이 들어가게 작성',
+    expiryDate: '2023-01-03T13:18',
+    listState: 'done',
+    manager: '류지창(이미지도 있으면 좋고)',
+  });
+  console.log(data);
   const openMakeIssue = e => {
     setIsMakeIssue(true);
   };
@@ -183,7 +184,8 @@ function App() {
     setIsMakeIssue(false);
   };
 
-  const modalHandler = e => {
+  const modalHandler = async (el, e) => {
+    await setListData(...data[el.listState + 'Arr'].filter(e => e.id === el.id));
     setModalOpen(true);
   };
 
@@ -206,10 +208,14 @@ function App() {
           <ListContainer>
             {data.todoArr.map(el => {
               return (
-                <List key={el.id} onClick={modalHandler}>
+                <List
+                  key={el.id}
+                  onClick={e => {
+                    modalHandler(el, e);
+                  }}
+                >
                   <FaRegPauseCircle className="logo" />
                   {el.title}
-                  <Modal isOpen={modalOpen} onClose={onClose} listData={el} nothing={dataHandler} />
                 </List>
               );
             })}
@@ -224,10 +230,14 @@ function App() {
           <ListContainer>
             {data.inProgressArr.map(el => {
               return (
-                <List key={el.id} onClick={modalHandler}>
+                <List
+                  key={el.id}
+                  onClick={e => {
+                    modalHandler(el, e);
+                  }}
+                >
                   <FaRegPlayCircle className="logo" />
                   {el.title}
-                  <Modal isOpen={modalOpen} onClose={onClose} listData={el} />
                 </List>
               );
             })}
@@ -242,10 +252,14 @@ function App() {
           <ListContainer>
             {data.doneArr.map(el => {
               return (
-                <List key={el.id} onClick={modalHandler}>
+                <List
+                  key={el.id}
+                  onClick={e => {
+                    modalHandler(el, e);
+                  }}
+                >
                   <FaRegCheckCircle className="logo" />
                   {el.title}
-                  <Modal isOpen={modalOpen} onClose={onClose} listData={el} />
                 </List>
               );
             })}
@@ -253,7 +267,8 @@ function App() {
           <IssueMakerButton onClick={openMakeIssue}>추가</IssueMakerButton>
         </BoxContainer>
       </BoxContainerWrapper>
-      <MakeIssue isOpen={isMakeIssue} onClose={closeMakeIssue} setData={setData} />
+      <Modal isOpen={modalOpen} onClose={onClose} listData={listData} nothing={dataHandler} />
+      <MakeIssue isOpen={isMakeIssue} onClose={closeMakeIssue} setData={setData} data={data} />
     </MainContainer>
   );
 }
