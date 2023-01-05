@@ -175,7 +175,6 @@ function App() {
     listState: 'done',
     manager: '류지창(이미지도 있으면 좋고)',
   });
-  console.log(data);
   const openMakeIssue = e => {
     setIsMakeIssue(true);
   };
