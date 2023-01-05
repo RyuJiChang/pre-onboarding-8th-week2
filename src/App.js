@@ -184,8 +184,8 @@ function App() {
     setIsMakeIssue(false);
   };
 
-  const modalHandler = async (el, e) => {
-    await setListData(...data[el.listState + 'Arr'].filter(e => e.id === el.id));
+  const modalHandler = (el, e) => {
+    setListData(...data[el.listState + 'Arr'].filter(e => e.id === el.id));
     setModalOpen(true);
   };
 
