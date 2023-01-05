@@ -20,7 +20,6 @@ function MakeIssue({ isOpen, onClose, setData, data }) {
     let expiryDate = e.target[5].value;
     let contents = e.target[6].value;
     let submitData = { title, contents, expiryDate, listState, manager, id: data.idNow++ };
-    console.log(submitData);
     if (listState === 'todo') {
       setData({
         todoArr: [...data.todoArr, submitData],
