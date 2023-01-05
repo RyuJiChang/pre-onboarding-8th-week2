@@ -1,8 +1,7 @@
 import { useRef } from 'react';
 import { GrClose } from 'react-icons/gr';
 import { ModalContainer, ModalBackdrop, ModalView, Button } from './styles';
-function Modal({ isOpen, onClose, listData }) {
-  let dataForChange = { ...listData };
+function MakeIssue({ isOpen, onClose }) {
   const outsideRef = useRef();
 
   const closeModal = e => {
@@ -10,23 +9,10 @@ function Modal({ isOpen, onClose, listData }) {
       onClose();
     }
   };
-  const dateHandler = e => {
-    console.log(e.target.value);
-  };
   return isOpen ? (
     <ModalContainer onClick={event => event.stopPropagation()}>
       <ModalBackdrop ref={outsideRef} onClick={closeModal}>
         <ModalView>
-          Title : {dataForChange.title}
-          <br />
-          Status : {dataForChange.listState}
-          <br />
-          Manager : <input type="text" value={dataForChange.manager} />
-          <br />
-          Expiry Date :
-          <input type="datetime-local" onChange={dateHandler} />
-          <br />
-          Content : {dataForChange.contents}
           <Button onClick={onClose}>
             <GrClose />
           </Button>
@@ -36,4 +22,4 @@ function Modal({ isOpen, onClose, listData }) {
   ) : null;
 }
 
-export default Modal;
+export default MakeIssue;

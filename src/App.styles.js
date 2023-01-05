@@ -27,13 +27,16 @@ const BoxContainerWrapper = styled.div`
 const BoxContainer = styled.div`
   width: 25vw;
   height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   border-radius: 1em;
-  overflow-y: auto;
+  /* overflow-y: auto; */
   border: 1px solid gray;
 `;
 
 const ContainerHeader = styled.div`
-  width: 23vw;
+  width: 24vw;
   display: flex;
   align-items: center;
   position: fixed;
@@ -58,9 +61,11 @@ const ContainerListNumber = styled.div`
 `;
 
 const ListContainer = styled.div`
+  height: 60vh;
   display: flex;
   flex-direction: column;
-  margin-top: 5em;
+  margin-top: 3em;
+  overflow-y: auto;
 `;
 
 const List = styled.div`
@@ -75,6 +80,14 @@ const List = styled.div`
   }
 `;
 
+const IssueMakerButton = styled.button`
+  width: 25vw;
+  height: 5vh;
+  border-radius: 1em;
+  border: none;
+  background-color: aliceblue;
+`;
+
 export {
   MainContainer,
   Header,
@@ -85,4 +98,5 @@ export {
   ContainerListNumber,
   ListContainer,
   List,
+  IssueMakerButton,
 };
