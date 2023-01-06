@@ -35,7 +35,6 @@ function App() {
   });
 
   useEffect(() => {
-    console.log('start');
     if (!localStorage.getItem('IssueData')) {
       localStorage.setItem(
         'IssueData',
@@ -49,9 +48,6 @@ function App() {
       return;
     }
     setData(JSON.parse(localStorage.getItem('IssueData')));
-    // localStorage.setItem('IssueData', JSON.stringify(data));
-    // console.log(JSON.parse(localStorage.getItem('IssueData')));
-    // JSON.parse(localStorage.getItem('IssueData'))
   }, []);
 
   const openMakeIssue = e => {

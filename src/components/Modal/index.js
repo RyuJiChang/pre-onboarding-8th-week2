@@ -21,7 +21,7 @@ function Modal({ isOpen, onClose, listData, data, setData }) {
 
   const saveList = e => {
     e.preventDefault();
-
+    let newData;
     if (listData.listState === modifyData.listState) {
       let newArr = [...data[listData.listState + 'Arr']].map(el => {
         if (el.id === modifyData.id) {
@@ -31,51 +31,54 @@ function Modal({ isOpen, onClose, listData, data, setData }) {
         }
       });
       if (modifyData.listState === 'todo') {
-        setData({
+        newData = {
           todoArr: [...newArr],
           inProgressArr: [...data.inProgressArr],
           doneArr: [...data.doneArr],
           idNow: data.idNow,
-        });
+        };
       } else if (modifyData.listState === 'inProgress') {
-        setData({
+        newData = {
           todoArr: [...data.todoArr],
           inProgressArr: [...newArr],
           doneArr: [...data.doneArr],
           idNow: data.idNow,
-        });
+        };
       } else if (modifyData.listState === 'done') {
-        setData({
+        newData = {
           todoArr: [...data.todoArr],
           inProgressArr: [...data.inProgressArr],
           doneArr: [...newArr],
           idNow: data.idNow,
-        });
+        };
       }
     } else {
       if (modifyData.listState === 'todo') {
-        setData({
+        newData = {
           todoArr: [...data.todoArr, modifyData],
           inProgressArr: [...data.inProgressArr].filter(el => el.id !== listData.id),
           doneArr: [...data.doneArr].filter(el => el.id !== listData.id),
           idNow: data.idNow,
-        });
+        };
       } else if (modifyData.listState === 'inProgress') {
-        setData({
+        newData = {
           todoArr: [...data.todoArr].filter(el => el.id !== listData.id),
           inProgressArr: [...data.inProgressArr, modifyData],
           doneArr: [...data.doneArr].filter(el => el.id !== listData.id),
           idNow: data.idNow,
-        });
+        };
       } else if (modifyData.listState === 'done') {
-        setData({
+        newData = {
           todoArr: [...data.todoArr].filter(el => el.id !== listData.id),
           inProgressArr: [...data.inProgressArr].filter(el => el.id !== listData.id),
           doneArr: [...data.doneArr, modifyData],
           idNow: data.idNow,
-        });
+        };
       }
     }
+
+    setData(newData);
+    localStorage.setItem('IssueData', JSON.stringify(newData));
     setIsModify(false);
     onClose();
   };
