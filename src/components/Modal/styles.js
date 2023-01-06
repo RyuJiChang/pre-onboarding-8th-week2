@@ -19,6 +19,10 @@ const ModalView = styled.div`
   border-radius: 1em;
   font-size: 1rem;
   background-color: white;
+  textarea {
+    width: 30vw;
+    height: 10em;
+  }
 `;
 
 const Button = styled.button`
