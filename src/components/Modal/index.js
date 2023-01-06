@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { GrClose } from 'react-icons/gr';
 import { ModalContainer, ModalBackdrop, ModalView, Button } from './styles';
 function Modal({ isOpen, onClose, listData, data, setData }) {
@@ -8,8 +8,13 @@ function Modal({ isOpen, onClose, listData, data, setData }) {
   const closeModal = e => {
     if (e.target === outsideRef.current) {
       onClose();
+      setIsModify(false);
     }
   };
+  useEffect(() => {
+    console.log(listData);
+    setModifyData({ ...listData });
+  }, [listData]);
 
   const modifyOn = () => {
     console.log(modifyData);
@@ -56,21 +61,42 @@ function Modal({ isOpen, onClose, listData, data, setData }) {
       <ModalBackdrop ref={outsideRef} onClick={closeModal}>
         {isModify ? (
           <ModalView>
-            제목 : {listData?.title}
-            <br />
-            상태 : {listData?.listState}
-            <br />
-            관리자 : {listData?.manager}
-            <br />
-            마감일 :{listData?.expiryDate.slice(0, 10)}
-            <br />
-            내용 : {listData?.contents}
-            <Button onClick={onClose}>
+            <div onSubmit={saveList}>
+              <form>
+                <div>
+                  <span>제목 : </span> <input type="text" />
+                </div>
+                <div>
+                  <span>상태 : </span>
+                  <input id="Todo" name="state" type="radio" />
+                  Todo
+                  <input id="InProgress" name="state" type="radio" />
+                  In Progress
+                  <input id="Done" name="state" type="radio" />
+                  Done
+                </div>
+                <div>
+                  <span>관리자 : </span> <input type="text" />
+                </div>
+                <div>
+                  <span>마감일 : </span> <input type="datetime-local" />
+                </div>
+                <div>
+                  <span>내용 : </span> <textarea />
+                </div>
+                <br />
+                <input type="submit" value={'저장'} />
+                <button onClick={cancleModify}>취소</button>
+              </form>
+            </div>
+            <Button
+              onClick={() => {
+                onClose();
+                setIsModify(false);
+              }}
+            >
               <GrClose />
             </Button>
-            <br />
-            <button onClick={saveList}>저장</button>
-            <button onClick={cancleModify}>취소</button>
           </ModalView>
         ) : (
           <ModalView>
