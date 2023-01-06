@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 import { GrClose } from 'react-icons/gr';
 import { ModalContainer, ModalBackdrop, ModalView, Button } from './styles';
-function Modal({ isOpen, onClose, listData }) {
+function Modal({ isOpen, onClose, listData, data, setData }) {
   const [isModify, setIsModify] = useState(false);
   const outsideRef = useRef();
   const closeModal = e => {
@@ -22,7 +22,29 @@ function Modal({ isOpen, onClose, listData }) {
     setIsModify(false);
   };
 
-  const deletList = () => {
+  const deletList = e => {
+    if (listData.listState === 'todo') {
+      setData({
+        todoArr: [...data.todoArr].filter(el => el.id !== listData.id),
+        inProgressArr: [...data.inProgressArr],
+        doneArr: [...data.doneArr],
+        idNow: data.idNow,
+      });
+    } else if (listData.listState === 'inProgress') {
+      setData({
+        todoArr: [...data.todoArr],
+        inProgressArr: [...data.inProgressArr].filter(el => el.id !== listData.id),
+        doneArr: [...data.doneArr],
+        idNow: data.idNow,
+      });
+    } else if (listData.listState === 'done') {
+      setData({
+        todoArr: [...data.todoArr],
+        inProgressArr: [...data.inProgressArr],
+        doneArr: [...data.doneArr].filter(el => el.id !== listData.id),
+        idNow: data.idNow,
+      });
+    }
     onClose();
   };
 

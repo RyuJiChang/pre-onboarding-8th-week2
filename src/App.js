@@ -191,10 +191,6 @@ function App() {
   const onClose = () => {
     setModalOpen(false);
   };
-
-  const dataHandler = () => {
-    setData(dummydata);
-  };
   return (
     <MainContainer>
       <Header>Issue Tracking Service</Header>
@@ -266,7 +262,13 @@ function App() {
           <IssueMakerButton onClick={openMakeIssue}>추가</IssueMakerButton>
         </BoxContainer>
       </BoxContainerWrapper>
-      <Modal isOpen={modalOpen} onClose={onClose} listData={listData} nothing={dataHandler} />
+      <Modal
+        isOpen={modalOpen}
+        onClose={onClose}
+        listData={listData}
+        setData={setData}
+        data={data}
+      />
       <MakeIssue isOpen={isMakeIssue} onClose={closeMakeIssue} setData={setData} data={data} />
     </MainContainer>
   );
