@@ -79,6 +79,7 @@ function App() {
             {data.todoArr.map(el => {
               return (
                 <List
+                  draggable
                   key={el.id}
                   onClick={e => {
                     modalHandler(el, e);
@@ -101,6 +102,7 @@ function App() {
             {data.inProgressArr.map(el => {
               return (
                 <List
+                  draggable
                   key={el.id}
                   onClick={e => {
                     modalHandler(el, e);
@@ -123,6 +125,7 @@ function App() {
             {data.doneArr.map(el => {
               return (
                 <List
+                  draggable
                   key={el.id}
                   onClick={e => {
                     modalHandler(el, e);
