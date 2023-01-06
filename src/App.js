@@ -102,7 +102,7 @@ function App() {
       for (let i = 0; i < element.parentElement.childNodes.length; i++) {
         let elementRect = element.parentElement.childNodes[i].getBoundingClientRect();
         if (e.clientY >= (elementRect.top + elementRect.bottom) / 2) {
-          if (String(el.id) !== element.childNodes[i].id) {
+          if (String(el.id) !== element.parentElement.childNodes[i].id) {
             index++;
           }
         } else {
