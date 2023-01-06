@@ -89,33 +89,35 @@ function Modal({ isOpen, onClose, listData, data, setData }) {
   };
 
   const deletList = e => {
+    let newData;
     if (listData.listState === 'todo') {
-      setData({
+      newData = {
         todoArr: [...data.todoArr].filter(el => el.id !== listData.id),
         inProgressArr: [...data.inProgressArr],
         doneArr: [...data.doneArr],
         idNow: data.idNow,
-      });
+      };
     } else if (listData.listState === 'inProgress') {
-      setData({
+      newData = {
         todoArr: [...data.todoArr],
         inProgressArr: [...data.inProgressArr].filter(el => el.id !== listData.id),
         doneArr: [...data.doneArr],
         idNow: data.idNow,
-      });
+      };
     } else if (listData.listState === 'done') {
-      setData({
+      newData = {
         todoArr: [...data.todoArr],
         inProgressArr: [...data.inProgressArr],
         doneArr: [...data.doneArr].filter(el => el.id !== listData.id),
         idNow: data.idNow,
-      });
+      };
     }
+    setData(newData);
+    localStorage.setItem('IssueData', JSON.stringify(newData));
     onClose();
   };
 
   const modifyListData = e => {
-    console.log(e.target.value);
     if ('todo inProgress done'.includes(e.target.id))
       setModifyData({
         ...modifyData,
