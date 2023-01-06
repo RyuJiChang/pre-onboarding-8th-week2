@@ -10,7 +10,7 @@ function MakeIssue({ isOpen, onClose, setData, data }) {
     }
   };
 
-  const submitHandler = e => {
+  const createList = e => {
     e.preventDefault();
     let title = e.target[0].value;
     let listState = ['todo', 'inProgress', 'done'][
@@ -20,35 +20,38 @@ function MakeIssue({ isOpen, onClose, setData, data }) {
     let expiryDate = e.target[5].value;
     let contents = e.target[6].value;
     let submitData = { title, contents, expiryDate, listState, manager, id: data.idNow++ };
+    let newData;
     if (listState === 'todo') {
-      setData({
+      newData = {
         todoArr: [...data.todoArr, submitData],
         inProgressArr: [...data.inProgressArr],
         doneArr: [...data.doneArr],
         idNow: data.idNow,
-      });
+      };
     } else if (listState === 'inProgress') {
-      setData({
+      newData = {
         todoArr: [...data.todoArr],
         inProgressArr: [...data.inProgressArr, submitData],
         doneArr: [...data.doneArr],
         idNow: data.idNow,
-      });
+      };
     } else if (listState === 'done') {
-      setData({
+      newData = {
         todoArr: [...data.todoArr],
         inProgressArr: [...data.inProgressArr],
         doneArr: [...data.doneArr, submitData],
         idNow: data.idNow,
-      });
+      };
     }
+    setData(newData);
+    localStorage.setItem('IssueData', JSON.stringify(newData));
   };
 
   return isOpen ? (
     <ModalContainer onClick={event => event.stopPropagation()}>
       <ModalBackdrop ref={outsideRef} onClick={closeModal}>
         <ModalView>
-          <div onSubmit={submitHandler}>
+          <div onSubmit={createList}>
             <form>
               <div>
                 <span>제목 : </span> <input type="text" />
