@@ -3,6 +3,7 @@ import { GrClose } from 'react-icons/gr';
 import { ModalContainer, ModalBackdrop, ModalView, Button } from './styles';
 function Modal({ isOpen, onClose, listData, data, setData }) {
   const [isModify, setIsModify] = useState(false);
+  const [modifyData, setModifyData] = useState(listData);
   const outsideRef = useRef();
   const closeModal = e => {
     if (e.target === outsideRef.current) {
@@ -11,6 +12,7 @@ function Modal({ isOpen, onClose, listData, data, setData }) {
   };
 
   const modifyOn = () => {
+    console.log(modifyData);
     setIsModify(true);
   };
 
@@ -19,6 +21,7 @@ function Modal({ isOpen, onClose, listData, data, setData }) {
   };
 
   const cancleModify = () => {
+    setModifyData({ ...listData });
     setIsModify(false);
   };
 
