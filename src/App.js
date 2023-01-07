@@ -33,6 +33,7 @@ function App() {
     listState: 'done',
     manager: '류지창(이미지도 있으면 좋고)',
   });
+  const [listState, setListState] = useState('todo');
 
   useEffect(() => {
     if (!localStorage.getItem('IssueData')) {
@@ -51,6 +52,8 @@ function App() {
   }, []);
 
   const openMakeIssue = e => {
+    console.log(e);
+    setListState(e);
     setIsMakeIssue(true);
   };
 
@@ -67,18 +70,7 @@ function App() {
     setModalOpen(false);
   };
 
-  // const dragStart = (e, el) => {
-  //   console.log(index, el.listState);
-  //   // e.dataTransfer.setData('todoId', el.id);
-  // };
-  // const dragEnter = (e, el) => {
-  //   // let element = document.getElementById(el.id);
-  //   // console.log(element.getBoundingClientRect());
-  // };
-
   const dragEnd = (e, el) => {
-    // console.log(el.listState, el.id); //start state
-
     let index = 0;
     let finalState;
     let element = document.elementFromPoint(e.clientX, e.clientY);
@@ -110,7 +102,6 @@ function App() {
         }
       }
     }
-    console.log(el.id, el.listState);
     moveList(el.id, el.listState, index, finalState);
   };
 
@@ -162,8 +153,6 @@ function App() {
               return (
                 <List
                   draggable
-                  // onDragStart={e => dragStart(e, el)}
-                  // onDragEnter={e => dragEnter(e, el)}
                   onDragEnd={e => dragEnd(e, el)}
                   id={el.id}
                   key={el.id}
@@ -177,7 +166,13 @@ function App() {
               );
             })}
           </ListContainer>
-          <IssueMakerButton onClick={openMakeIssue}>추가</IssueMakerButton>
+          <IssueMakerButton
+            onClick={() => {
+              openMakeIssue('todo');
+            }}
+          >
+            추가
+          </IssueMakerButton>
         </BoxContainer>
         <BoxContainer>
           <ContainerHeader>
@@ -189,8 +184,6 @@ function App() {
               return (
                 <List
                   draggable
-                  // onDragStart={e => dragStart(e, el)}
-                  // onDragEnter={e => dragEnter(e, el)}
                   onDragEnd={e => dragEnd(e, el)}
                   id={el.id}
                   key={el.id}
@@ -204,7 +197,13 @@ function App() {
               );
             })}
           </ListContainer>
-          <IssueMakerButton onClick={openMakeIssue}>추가</IssueMakerButton>
+          <IssueMakerButton
+            onClick={() => {
+              openMakeIssue('inProgress');
+            }}
+          >
+            추가
+          </IssueMakerButton>
         </BoxContainer>
         <BoxContainer>
           <ContainerHeader>
@@ -216,8 +215,6 @@ function App() {
               return (
                 <List
                   draggable
-                  // onDragStart={e => dragStart(e, el)}
-                  // onDragEnter={e => dragEnter(e, el)}
                   onDragEnd={e => dragEnd(e, el)}
                   id={el.id}
                   key={el.id}
@@ -231,7 +228,13 @@ function App() {
               );
             })}
           </ListContainer>
-          <IssueMakerButton onClick={openMakeIssue}>추가</IssueMakerButton>
+          <IssueMakerButton
+            onClick={() => {
+              openMakeIssue('done');
+            }}
+          >
+            추가
+          </IssueMakerButton>
         </BoxContainer>
       </BoxContainerWrapper>
       <Modal
@@ -241,7 +244,13 @@ function App() {
         setData={setData}
         data={data}
       />
-      <MakeIssue isOpen={isMakeIssue} onClose={closeMakeIssue} setData={setData} data={data} />
+      <MakeIssue
+        isOpen={isMakeIssue}
+        onClose={closeMakeIssue}
+        setData={setData}
+        data={data}
+        hereState={listState}
+      />
     </MainContainer>
   );
 }

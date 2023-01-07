@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { GrClose } from 'react-icons/gr';
 import { ModalContainer, ModalBackdrop, ModalView, Button } from './styles';
-function MakeIssue({ isOpen, onClose, setData, data }) {
+function MakeIssue({ isOpen, onClose, setData, data, hereState }) {
   const outsideRef = useRef();
 
   const closeModal = e => {
@@ -9,13 +9,23 @@ function MakeIssue({ isOpen, onClose, setData, data }) {
       onClose();
     }
   };
+  let now_utc = Date.now();
+  let timeOff = new Date().getTimezoneOffset() * 60000;
+  let today = new Date(now_utc - timeOff).toISOString().substring(0, 16);
 
   const createList = e => {
+    console.log(e.target.id);
     e.preventDefault();
     let title = e.target[0].value;
     let listState = ['todo', 'inProgress', 'done'][
       [e.target[1].checked, e.target[2].checked, e.target[3].checked].indexOf(true)
     ];
+    if (!title) {
+      title = '무제';
+    }
+    if (!listState) {
+      listState = hereState;
+    }
     let manager = e.target[4].value;
     let expiryDate = e.target[5].value;
     let contents = e.target[6].value;
@@ -69,7 +79,7 @@ function MakeIssue({ isOpen, onClose, setData, data }) {
                 <span>관리자 : </span> <input type="text" />
               </div>
               <div>
-                <span>마감일 : </span> <input type="datetime-local" />
+                <span>마감일 : </span> <input type="datetime-local" min={today} />
               </div>
               <div>
                 <span>내용 : </span> <textarea />
